@@ -223,6 +223,8 @@ commander.on("--help", () => {
     console.log(`tslint accepts the following commandline options:\n\n    ${optionDetails.join("\n\n    ")}\n\n`);
 });
 
+commander.allowUnknownOption();
+
 // Hack to get unknown option errors to work. https://github.com/visionmedia/commander.js/pull/121
 const parsed = commander.parseOptions(process.argv.slice(2));
 commander.args = parsed.args;
